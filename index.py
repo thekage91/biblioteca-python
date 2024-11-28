@@ -11,5 +11,7 @@ app.register_blueprint(auth.Auth)
 app.register_blueprint(books.Book)
 app.register_blueprint(users.Users)
 
+print('Applicazione avviata')
+
 if __name__ == '__main__':
     app.run(debug=True)
