@@ -1,0 +1,44 @@
+{% extends "layout.html" %} {% block body %}
+
+<section>
+  <h2>Lista dei libri in biblioteca</h2>
+  <form action="/lista_libri" method="get">
+    <button type="submit">Mostra tutti i libri</button>
+  </form>
+
+  {% if books %}
+    <table>
+      <caption>
+        Libri attualmente presenti
+      </caption>
+      <thead>
+        <tr>
+          <th>Titolo</th>
+          <th>Autore</th>
+          <th>ISBN</th>
+          <th>Stato</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for book in books %}
+          <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.status }}</td>
+            <td>
+              <a href="/boo/">Vai al profilo</a>
+              <form action="/remove-book/1" method="POST">
+                <button type="submit">Elimina</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+  {% else %}
+  <p>Nessun libro disponibile.</p>
+  {% endif %}
+
+</section>
+{% endblock %}

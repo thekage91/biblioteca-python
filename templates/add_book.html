@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block body %}
+<!-- Sezione per aggiungere un nuovo libro -->
+<section>
+  <h2>Aggiungi un nuovo libro</h2>
+
+  <form action="/add-book" method="post">
+      {{ form.hidden_tag() }}
+      
+      {{ form.title.label }} 
+      {{ form.title(size=20) }}
+
+      {{ form.author.label }}
+      {{ form.author }}
+
+      {{ form.isbn.label }}
+      {{ form.isbn }}
+
+      {{ form.submit() }}
+  </form>
+</section>
+{% endblock %}
