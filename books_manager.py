@@ -22,3 +22,5 @@ def get_all_books(db):
 def search_book_by_title(db, title):
     Book = Query()
     return db.search(Book.title == title)
+
+print('books_manager.py caricato')
