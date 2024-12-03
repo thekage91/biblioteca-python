@@ -13,6 +13,7 @@ app.register_blueprint(users.Users)
 
 print('Applicazione avviata')
 print('Ciao mondo')
+print('Ciao mondo 2')
 
 if __name__ == '__main__':
     app.run(debug=True)
